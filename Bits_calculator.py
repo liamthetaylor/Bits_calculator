@@ -36,6 +36,29 @@ def user_choice():
             print()
 
 
+def integer_checker(question, low):
+    valid = False
+    while not valid:
+        error = "Please enter an integer that is more than 0" "or (equal to) {}".format(low)
+        try:
+            response = int(input(question))
+            if response >= low:
+                return reponse
+            else:
+                print()
+                print(error)
+                print()
+        except ValueError:
+            print()
+            print(error)
+            print()
+
+    print()
+    print("The integer you have chosen is", response)
+    print()
+    loop = input("press <enter> to rerun, any other key to finish: ")
+    print()
+
 # main routine goes here
 
 # heading
@@ -52,6 +75,7 @@ while keep_going == "":
     print()
     print("You chose", data_type)
     print()
+
     
     # For integers, ask user for integer
     # (must be integer more / equal to 0)
