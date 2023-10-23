@@ -43,7 +43,7 @@ def integer_checker(question, low):
         try:
             response = int(input(question))
             if response >= low:
-                return reponse
+                return response
             else:
                 print()
                 print(error)
