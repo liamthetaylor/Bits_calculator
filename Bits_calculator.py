@@ -39,7 +39,7 @@ def user_choice():
 def integer_checker(question, low):
     valid = False
     while not valid:
-        error = "Please enter an integer that is more than 0" "or (equal to) {}".format(low)
+        error = "Please enter an integer that is more than or (equal to) {}".format(low)
         try:
             response = int(input(question))
             if response >= low:
@@ -56,8 +56,7 @@ def integer_checker(question, low):
     print()
     print("The integer you have chosen is", response)
     print()
-    loop = input("press <enter> to rerun, any other key to finish: ")
-    print()
+
 
 # main routine goes here
 
@@ -76,9 +75,16 @@ while keep_going == "":
     print("You chose", data_type)
     print()
 
-    
     # For integers, ask user for integer
     # (must be integer more / equal to 0)
+    if data_type == "integer":
+        var_integer = integer_checker("Enter an integer: ", 0)
+        print()
 
     # For images, ask user for width and height
     # (must be integer more / equal to 1)
+    elif data_type == "image":
+        image_width = integer_checker("image width: ", 1)
+        print()
+        image_height = integer_checker("image height: ", 1)
+        print()
