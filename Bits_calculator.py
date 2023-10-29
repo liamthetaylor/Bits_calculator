@@ -57,9 +57,33 @@ def integer_checker(question, low):
     print("The integer you have chosen is", response)
     print()
 
+def text_bits():
+    print()
+    var_text = input("Please enter some text: ")
+    var_length = len(var_text)
+    num_bits = 8 * var_length
+    print()
+    print("\'{}\' has {} characters...".format(var_text, var_length))
+    print("Number of bits is {} x 8...".format(var_length))
+    print("We need {} bits to represent '{}'".format(num_bits, var_text))
+    print()
+    return ""
+
+def image_bits():
+    image_height = num_check("Image height: ", 1)
+    image_width = num_check("Image width: ", 1)
+    num_pix = image_height * image_width
+    num_bits = num_pix * 24
+    print()
+    print("Number of pixels is {} x {} = {}".format(image_height, image_width, num_pix))
+    print("Number of bits is {} x 24 = {}".format(num_pix, num_bits))
+    return ""
+
 
 # main routine goes here
+text_bits()
 
+image_bits()
 # heading
 statement_generator("Bit calculator for text, integers and images", "~")
 
