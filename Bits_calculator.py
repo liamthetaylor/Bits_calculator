@@ -10,6 +10,8 @@ def statement_generator(text, decoration):
     return ""
 
 # Checks user choice is text, integer or image
+
+
 def user_choice():
     text_ok = ["text", "t", "txt"]
     image_ok = ["im", "image", "pic", "picture", "photo"]
@@ -34,6 +36,7 @@ def user_choice():
             print("Please choose valid file type.")
             print()
 
+
 def integer_checker(question, low):
     valid = False
     while not valid:
@@ -55,6 +58,7 @@ def integer_checker(question, low):
     print("The integer you have chosen is", response)
     print()
 
+
 def text_bits():
     print()
     var_text = input("Please enter some text: ")
@@ -67,6 +71,7 @@ def text_bits():
     print()
     return ""
 
+
 def image_bits():
     image_height = integer_checker("Image height: ", 1)
     image_width = integer_checker("Image width: ", 1)
@@ -75,6 +80,7 @@ def image_bits():
     print()
     print("Number of pixels is {} x {} = {}".format(image_height, image_width, num_pix))
     print("Number of bits is {} x 24 = {}".format(num_pix, num_bits))
+    print()
     return ""
 
 
@@ -87,10 +93,13 @@ def integer_bits():
     print("The number of bits in {} is {}".format(var_int, num_bits))
     print()
 
-    return""
+    return ""
+
 # main routine goes here
 
 # heading
+
+
 statement_generator("Bit calculator for text, integers and images", "~")
 
 # display instructions if it is users first time
@@ -119,8 +128,8 @@ while keep_going == "":
         image_height = integer_checker("image height: ", 1)
         print()
 
+integer_bits()
+
 text_bits()
 
 image_bits()
-
-integer_bits()
