@@ -9,7 +9,6 @@ def statement_generator(text, decoration):
     print()
     return ""
 
-
 # Checks user choice is text, integer or image
 def user_choice():
     text_ok = ["text", "t", "txt"]
@@ -34,7 +33,6 @@ def user_choice():
             print()
             print("Please choose valid file type.")
             print()
-
 
 def integer_checker(question, low):
     valid = False
@@ -70,8 +68,8 @@ def text_bits():
     return ""
 
 def image_bits():
-    image_height = num_check("Image height: ", 1)
-    image_width = num_check("Image width: ", 1)
+    image_height = integer_checker("Image height: ", 1)
+    image_width = integer_checker("Image width: ", 1)
     num_pix = image_height * image_width
     num_bits = num_pix * 24
     print()
@@ -80,10 +78,18 @@ def image_bits():
     return ""
 
 
-# main routine goes here
-text_bits()
+def integer_bits():
+    var_int = integer_checker("Please enter an integer: ", 0)
+    var_bin = "{0:b}".format(var_int)
+    num_bits = len(var_bin)
+    print()
+    print("{} in binary is {}".format(var_int, var_bin))
+    print("The number of bits in {} is {}".format(var_int, num_bits))
+    print()
 
-image_bits()
+    return""
+# main routine goes here
+
 # heading
 statement_generator("Bit calculator for text, integers and images", "~")
 
@@ -112,3 +118,9 @@ while keep_going == "":
         print()
         image_height = integer_checker("image height: ", 1)
         print()
+
+text_bits()
+
+image_bits()
+
+integer_bits()
