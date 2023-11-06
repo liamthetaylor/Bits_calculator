@@ -117,19 +117,12 @@ while keep_going == "":
     # For integers, ask user for integer
     # (must be integer more / equal to 0)
     if data_type == "integer":
-        var_integer = integer_checker("Enter an integer: ", 0)
-        print()
+        integer_bits()
 
     # For images, ask user for width and height
     # (must be integer more / equal to 1)
     elif data_type == "image":
-        image_width = integer_checker("image width: ", 1)
-        print()
-        image_height = integer_checker("image height: ", 1)
-        print()
+        image_bits()
 
-integer_bits()
-
-text_bits()
-
-image_bits()
+    elif data_type == "text":
+        text_bits()
