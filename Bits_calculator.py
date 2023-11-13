@@ -18,6 +18,7 @@ def user_choice():
     int_ok = ["int", "in", "integer", "#", "num", "number"]
     valid = False
     while not valid:
+        print()
         response = input("File type (integer / text / image): ").lower()
         if response in text_ok:
             return "text"
@@ -101,7 +102,22 @@ def integer_bits():
 
     return ""
 
-# main routine goes here
+
+def instructions():
+    statement_generator("Instructions", "=")
+    print()
+    print("Please choose a data type (image / text / integer)")
+    print()
+    print("This program assumes that the images are being represented in "
+          "24 bit colour (ie: 24 bits per pixel).")
+    print("For text, we assume that ascii encoding is being used (8 bits per character).")
+    print()
+    print("To complete as many calculations as necessary, press enter after each calculation.")
+    print("To finish with bits calculator, press any other key after calculation.")
+    print()
+    return ""
+
+    # main routine goes here
 
     # heading
 
@@ -109,6 +125,9 @@ def integer_bits():
 statement_generator("Bit calculator for text, integers and images", "~")
 
 # display instructions if it is users first time
+first_time = input("press <enter> to show instructions, any other key to continue: ")
+if first_time == "":
+    instructions()
 
 # loop to allow multiple calculations
 keep_going = ""
